@@ -33,6 +33,7 @@ def Salir():
     if valor==True:
         root.destroy()
 
+####### Seleccionar carpeta donde estan las OP iniciales
 def sel_origen():
     global dir_origen
     dir_origen = filedialog.askdirectory()
@@ -67,6 +68,7 @@ def sel_origen():
     
     return dir_origen
 
+########## Foliar PDFs de carpeta seleccionada ###############
 def Foliar_ordenes():
     try:
         archivo_f = dir_origen + '/excel/Folios.xlsx'
@@ -117,6 +119,7 @@ def Foliar_ordenes():
                 messagebox.showerror(message=f"El vendedor {vendedor_real} no fue encontrado en folios", title="Resultado")
     messagebox.showinfo(message="Ordenes procesadas", title="Resultado")
 
+######### Seleccionar asunto para el correo ########
 def sel(evento):
     global e_asunto
     selection = "Tipo de Orden de Pago: " + cbx_asunto.get()
@@ -125,13 +128,14 @@ def sel(evento):
     b2.config(state='normal')
     return e_asunto
 
+#### Insertar asuntos personalizados ###3
 def my_insert(): # adding data to Combobox
     #if e1.get() not in cbx_asunto['values']:
     cbx_asunto['values'] +=(e1.get(),) # add option
     nuevo_asunto = e1.get()
     messagebox.showinfo(message=f"Se agergó el asunto {nuevo_asunto.upper()}", title="Agregado")
 
-
+######## Enviar OPs foliadas ###########
 def envio_pdf():
     try:
         archivo_c = cwd + '/recursos/Correos.xlsx'
