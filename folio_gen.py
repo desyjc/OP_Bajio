@@ -171,11 +171,11 @@ def envio_pdf():
             else:
                 e_vendedor = (searchd.iloc[0][3])
                 if pd.isna(e_vendedor):
-                    e_vendedor = "jcdesigaud@jiro.mx"
+                    e_vendedor = "gpaloalto@jiro.mx"
                 
                 e_ejecutivo = (searchd.iloc[0][4])
                 if pd.isna(e_ejecutivo):
-                    e_ejecutivo = "jcdesigaud@jiro.mx"
+                    e_ejecutivo = "gpaloalto@jiro.mx"
 
                 Envio_pdf(dir_origen, e_vendedor, e_ejecutivo, e_asunto, PdfFileName)
     messagebox.showinfo(message="Envíos terminados", title="Resultado")      
